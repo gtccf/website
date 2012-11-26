@@ -1,0 +1,4 @@
+# encoding: utf-8
+
+watch("source") { system("bundle exec middleman build") }
+
