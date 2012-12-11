@@ -7,7 +7,7 @@
 # require 'susy'
 
 # Change Compass configuration
-require 'twitter-bootstrap'
+require 'compass_twitter_bootstrap'
 
 ###
 # Page options, layouts, aliases and proxies
