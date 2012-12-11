@@ -7,9 +7,7 @@
 # require 'susy'
 
 # Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
+require 'twitter-bootstrap'
 
 ###
 # Page options, layouts, aliases and proxies

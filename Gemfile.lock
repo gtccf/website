@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/corroded/compass-twitter-bootstrap-plugin.git
+  revision: 7cb180ec8df23de637d430816e6b8e2fe64f5ee2
+  specs:
+    compass-twitter-bootstrap-plugin (0.1.0)
+      compass (>= 0.11.6)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -130,6 +137,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  compass-twitter-bootstrap-plugin!
   foreman
   growl_notify
   middleman (~> 3.0.6)

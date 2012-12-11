@@ -1,5 +1,6 @@
 source :rubygems
 
+gem 'compass-twitter-bootstrap-plugin', git: 'git://github.com/corroded/compass-twitter-bootstrap-plugin.git'
 gem "slim"
 gem "therubyracer"
 gem "redcarpet"
