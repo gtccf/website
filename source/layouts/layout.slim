@@ -1,0 +1,33 @@
+DOCTYPE html
+html
+  head
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    title #{content_for?(:title) ? yield(:title) : "Home"} | Georgia Tech Christian Campus Fellowship
+    == stylesheet_link_tag "application"
+    == javascript_include_tag "application"
+    /! Le HTML5 shim, for IE6-8 support of HTML elements
+    /[if lt IE 9]
+      = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
+    link href="images/favicon.ico" rel="shortcut icon"
+
+  body.page
+    header
+      a.brand href="/" Georgia Tech CCF
+      ul.nav
+        li== link_to "About", "/about"
+        li== link_to "Give to CCF", "/giving"
+    .content
+      == yield
+    nav
+      ul.nav.nav-list
+        li.nav-header Weekly Events
+        li== link_to "Bible Study (Thursdays @ 7PM)", "/bible-study"
+        li== link_to "Cafe (Tuesdays @ 8PM)", "/cafe"
+        li== link_to "Trivia Lunch (Mondays @ 11am and noon)", "/trivia-lunch"
+      ul.nav.nav-list
+        li.nav-header Special Events
+        li== link_to "The Retreat Formerly Known as the Christmas Retreat", "/retreats"
+    footer
+      p &copy; Georgia Tech CCF #{Date.today.year}
