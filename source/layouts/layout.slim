@@ -15,10 +15,11 @@ html
   body
     .page
       header
+        == image_tag "logo.png", class: "brand"
         .nav
-          button== link_to "Home", "/"
-          button== link_to "About", "/about"
-          button== link_to "Give to CCF", "/giving"
+          == link_to "Home", "/"
+          == link_to "About", "/about"
+          == link_to "Give to CCF", "/giving"
       nav
         ul.nav-list
           li.nav-header Weekly Events
@@ -27,7 +28,7 @@ html
           li== link_to "Trivia Lunch (Mondays @ 11am and noon)", "/trivia-lunch"
         ul.nav-list
           li.nav-header Special Events
-          li== link_to "The Retreat Formerly Known as the Christmas Retreat", "/retreats"
+          li== link_to "The Retreat Formerly Known as the Christmas Retreat (January 25th)", "/retreats"
       .content
         == yield
       footer

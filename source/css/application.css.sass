@@ -15,6 +15,7 @@ $breakpoint: 8
 
 @import "compass"
 @import "susy"
+@import "_buttons"
 @import "about"
 @import "youtube"
 
@@ -25,14 +26,13 @@ p
 .page
   @include container($total-columns, $columns)
   padding: 5px
-  background-color: black
-
+  background-color: white
   border: 1px solid black
 
   @include at-breakpoint(8)
     margin-top: 6%
     margin-bottom: 6%
-    border-radius: 15px
+    @include rounded(15px)
     header
       @include span-columns(12, $columns)
     nav
@@ -48,21 +48,21 @@ p
   // nav spans 3 columns of total 12.
   nav
     padding: 5px
-    background-color: black
 
   footer
     @include span-columns(12, $columns)
-    background-color: black
     clear: both
     margin-top: 1em
     border-top: 1px solid black
     .address
       margin: 0.5em
-      color: white
       font-size: 12pt
 
 header
-  background-color: black
+  .brand
+    float: right
+    margin-top: -5px
+    margin-right: -5px
   .nav
     border-bottom: 2px dashed black
     padding: 5px
@@ -78,13 +78,14 @@ body
   //background-image: url('https://sphotos-a.xx.fbcdn.net/hphotos-snc7/304331_3762726222790_916983800_n.jpg')
 
 p, h1, h2, h3
-  color: white
+  color: black
 
 
 .nav
-  margin: 0
-  padding: 0
-  list-style-type: none
+  a
+    margin: 5px
+    @include button
+    @include color($blue)
 
 .nav-header
   margin: 0
@@ -92,7 +93,7 @@ p, h1, h2, h3
   color: $blue
 
 .contact
-  border-radius: 2px
+  @include rounded(2px)
   border: 3px solid $green
   background-color: white
   color: black
