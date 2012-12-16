@@ -18,48 +18,68 @@ $breakpoint: 8
 @import "about"
 @import "youtube"
 
+p
+  margin: 1px
+  padding: 1px
+
 .page
   @include container($total-columns, $columns)
-  padding: 0
+  padding: 5px
+  background-color: black
 
   border: 1px solid black
 
   @include at-breakpoint(8)
+    margin-top: 6%
+    margin-bottom: 6%
+    border-radius: 15px
     header
       @include span-columns(12, $columns)
-      .brand
-        @include span-columns(4, $columns)
-      .nav
-        @include span-columns(6, $columns)
     nav
       @include span-columns(3 omega, $columns)
     .content
-      @include span-columns(9,12)
+      @include span-columns(8,12)
     .contact
       @include span-columns(3, 12)
     .address
       @include span-columns(4,12)
 
+
   // nav spans 3 columns of total 12.
   nav
-    background-color: $green
+    padding: 5px
+    background-color: black
 
   footer
     @include span-columns(12, $columns)
-    background-color: $green
+    background-color: black
     clear: both
     margin-top: 1em
     border-top: 1px solid black
     .address
       margin: 0.5em
-      color: $blue
+      color: white
       font-size: 12pt
 
-h3
-  color: $blue
-
 header
-  background-color: $green
+  background-color: black
+  .nav
+    border-bottom: 2px dashed black
+    padding: 5px
+    @include at-breakpoint($breakpoint)
+      border-bottom: 0
+
+body
+  background-color: black
+  background-size: cover
+  background-attachment: fixed
+  background-repeat: no-repeat
+  background-image: url('http://25.media.tumblr.com/tumblr_mdcm4wd6zb1qddqhno1_1280.jpg')
+  //background-image: url('https://sphotos-a.xx.fbcdn.net/hphotos-snc7/304331_3762726222790_916983800_n.jpg')
+
+p, h1, h2, h3
+  color: white
+
 
 .nav
   margin: 0
@@ -72,8 +92,10 @@ header
   color: $blue
 
 .contact
-  border: 3px solid $blue
+  border-radius: 2px
+  border: 3px solid $green
   background-color: white
+  color: black
   padding: 4px
   margin: 0.5em
   .photo

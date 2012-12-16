@@ -12,36 +12,37 @@ html
       = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
     link href="images/favicon.ico" rel="shortcut icon"
 
-  body.page
-    header
-      a.brand href="/" == image_tag "logo.png", alt: "GTCCF"
-      ul.nav
-        li== link_to "About", "/about"
-        li== link_to "Give to CCF", "/giving"
-    nav
-      ul.nav-list
-        li.nav-header Weekly Events
-        li== link_to "Bible Study (Thursdays @ 7PM)", "/bible-study"
-        li== link_to "Cafe (Tuesdays @ 8PM)", "/cafe"
-        li== link_to "Trivia Lunch (Mondays @ 11am and noon)", "/trivia-lunch"
-      ul.nav-list
-        li.nav-header Special Events
-        li== link_to "The Retreat Formerly Known as the Christmas Retreat", "/retreats"
-    .content
-      == yield
-    footer
-      .address
-        .name GT Christian Campus Fellowship
-        .street 767 Techwood Drive
-        .city Atlanta, GA 30313
-        .phone (404) 872-3856
-      .contact
-        == image_tag 'staff/rick.jpg', class: 'photo' 
-        .name Rick Harper
-        .title Campus Minister
-        a.email href="mailto:rick@gtccf.org" rick@gtccf.org
-      .contact
-        == image_tag 'staff/baker.jpg', class: 'photo'
-        .name Neal Baker
-        .title Senior Assoc. Minister
-        a.email href="mailto:neal@gtccf.org" neal@gtccf.org
+  body
+    .page
+      header
+        .nav
+          button== link_to "Home", "/"
+          button== link_to "About", "/about"
+          button== link_to "Give to CCF", "/giving"
+      nav
+        ul.nav-list
+          li.nav-header Weekly Events
+          li== link_to "Bible Study (Thursdays @ 7PM)", "/bible-study"
+          li== link_to "Cafe (Tuesdays @ 8PM)", "/cafe"
+          li== link_to "Trivia Lunch (Mondays @ 11am and noon)", "/trivia-lunch"
+        ul.nav-list
+          li.nav-header Special Events
+          li== link_to "The Retreat Formerly Known as the Christmas Retreat", "/retreats"
+      .content
+        == yield
+      footer
+        .address
+          .name GT Christian Campus Fellowship
+          .street 767 Techwood Drive
+          .city Atlanta, GA 30313
+          .phone (404) 872-3856
+        .contact
+          == image_tag 'staff/rick.jpg', class: 'photo' 
+          .name Rick Harper
+          .title Campus Minister
+          a.email href="mailto:rick@gtccf.org" rick@gtccf.org
+        .contact
+          == image_tag 'staff/baker.jpg', class: 'photo'
+          .name Neal Baker
+          .title Senior Assoc. Minister
+          a.email href="mailto:neal@gtccf.org" neal@gtccf.org

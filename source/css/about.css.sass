@@ -1,5 +1,23 @@
 .bio
-  p.title
+  border-radius: 5px
+  background-color: #101010
+  border: 1px solid #505050
+  color: white
+  margin: 10px
+  padding: 5px
+  .name
+    margin: 5px
+    @include span-columns(2, 5)
+  .title
+    @include span-columns(1, 5)
     font-weight: bold
+  .email
+    @include span-columns(1,5)
   .photo
-    float: right
+    @include span-columns(1 omega, 5)
+    max-height: 75px
+    max-width: 75px
+  p
+    clear: both
+    padding: 5px
+    margin: 5px
