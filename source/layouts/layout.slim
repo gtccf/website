@@ -18,8 +18,6 @@ html
       ul.nav
         li== link_to "About", "/about"
         li== link_to "Give to CCF", "/giving"
-    .content
-      == yield
     nav
       ul.nav-list
         li.nav-header Weekly Events
@@ -29,6 +27,8 @@ html
       ul.nav-list
         li.nav-header Special Events
         li== link_to "The Retreat Formerly Known as the Christmas Retreat", "/retreats"
+    .content
+      == yield
     footer
       .address
         .name GT Christian Campus Fellowship
