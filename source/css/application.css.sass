@@ -1,6 +1,13 @@
+@font-face
+  font-family: Zeroes
+  src: url('/css/zeroes.ttf')
+
 *
   padding: 0
   margin: 0
+
+h1, h2, h3
+  font-family: Zeroes
 
 $blue: #37627C
 $green: #ABC272
@@ -12,6 +19,7 @@ $grid-padding   : $gutter-width  // grid-padding equal to gutters
 
 $columns: 12
 $breakpoint: 8
+
 
 @import "compass"
 @import "susy"
@@ -94,7 +102,7 @@ p, h1, h2, h3
 
 .contact
   @include rounded(2px)
-  border: 3px solid $green
+  border: 3px solid $blue
   background-color: white
   color: black
   padding: 4px
@@ -107,6 +115,7 @@ p, h1, h2, h3
     .email, .title, .name
       @include span-columns(2 omega, 3) 
   .name
+    font-family: Zeroes
     font-size: 16pt
     color: $blue
 
