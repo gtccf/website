@@ -5,6 +5,7 @@
 *
   padding: 0
   margin: 0
+  font-family: "Trebuchet MS", Helvetica, sans-serif
 
 h1, h2, h3
   font-family: Zeroes
@@ -61,8 +62,6 @@ $fade: #D0D0D0
   background-color: $background
   border: 1px solid black
   padding: 0
-  header
-    padding: 5px
   footer
     @include span-columns(12, $columns)
     @include gradient($background, $fade)
@@ -73,7 +72,8 @@ $fade: #D0D0D0
       margin: 0.5em
       font-size: small
 
-
+#always, #special
+  padding-top: 5px
 #navbar
   border-bottom: 2px dashed black
   padding: 5px
@@ -83,7 +83,8 @@ $fade: #D0D0D0
     margin: 5px
     @include button
     @include color($blue)
-
+.page-title
+  margin: 5px
 body
   background-color: black
   background-size: cover
