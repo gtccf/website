@@ -60,8 +60,8 @@ $fade: #D0D0D0
   @include container($total-columns, $columns)
   background-color: $background
   border: 1px solid black
-  // nav spans 3 columns of total 12.
-  nav
+  padding: 0
+  header
     padding: 5px
   footer
     @include span-columns(12, $columns)
@@ -71,7 +71,7 @@ $fade: #D0D0D0
     border-top: 1px solid black
     .address
       margin: 0.5em
-      font-size: 12pt
+      font-size: small
 
 
 #navbar
