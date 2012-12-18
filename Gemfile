@@ -5,7 +5,6 @@ gem "susy"
 gem "therubyracer"
 gem "redcarpet"
 gem "middleman", "~>3.0.6"
-gem "middleman-smusher"
 gem "thin"
 
 group :development do
