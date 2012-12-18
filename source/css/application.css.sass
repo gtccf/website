@@ -30,35 +30,42 @@ $breakpoint: 8
 p
   margin: 1px
   padding: 1px
+a, a:visited
+  color: $green
+
+$background: #E9E9E9
+$fade: #D0D0D0
 
 .page
-  @include container($total-columns, $columns)
-  padding: 5px
-  background-color: white
-  border: 1px solid black
-
   @include at-breakpoint(8)
-    margin-top: 6%
+    margin-top: 3%
     margin-bottom: 6%
-    @include rounded(15px)
     header
       @include span-columns(12, $columns)
-    nav
-      @include span-columns(3 omega, $columns)
-    .content
-      @include span-columns(8,12)
+      @include gradient($fade, $background)
+      #brand
+        img
+          height: 150px
+        @include span-columns(5, $columns)
+      #always
+        @include span-columns(3, $columns)
+      #special
+        @include span-columns(4 omega, $columns)
     .contact
       @include span-columns(3, 12)
     .address
       @include span-columns(4,12)
 
-
+.page
+  @include container($total-columns, $columns)
+  background-color: $background
+  border: 1px solid black
   // nav spans 3 columns of total 12.
   nav
     padding: 5px
-
   footer
     @include span-columns(12, $columns)
+    @include gradient($background, $fade)
     clear: both
     margin-top: 1em
     border-top: 1px solid black
@@ -66,16 +73,16 @@ p
       margin: 0.5em
       font-size: 12pt
 
-header
-  .brand
-    float: right
-    margin-top: -5px
-    margin-right: -5px
-  .nav
-    border-bottom: 2px dashed black
-    padding: 5px
-    @include at-breakpoint($breakpoint)
-      border-bottom: 0
+
+#navbar
+  border-bottom: 2px dashed black
+  padding: 5px
+  @include at-breakpoint($breakpoint)
+    border-bottom: 0
+  a
+    margin: 5px
+    @include button
+    @include color($blue)
 
 body
   background-color: black
@@ -85,20 +92,12 @@ body
   background-image: url('http://25.media.tumblr.com/tumblr_mdcm4wd6zb1qddqhno1_1280.jpg')
   //background-image: url('https://sphotos-a.xx.fbcdn.net/hphotos-snc7/304331_3762726222790_916983800_n.jpg')
 
-p, h1, h2, h3
-  color: black
-
-
-.nav
-  a
-    margin: 5px
-    @include button
-    @include color($blue)
-
-.nav-header
-  margin: 0
-  list-style-type: none
-  color: $blue
+event
+  .name
+    color: black
+    font-family: Zeroes
+  .time
+    font-size: small
 
 .contact
   @include rounded(2px)
