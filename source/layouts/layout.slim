@@ -11,14 +11,25 @@ html
     /[if lt IE 9]
       = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
     link href="images/favicon.ico" rel="shortcut icon"
-
   body
+    #fb-root
+    javascript:
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=210752665690667";
+              fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'facebook-jssdk'));
     .page
       header
         #brand
           == image_tag "logo.png"
         #always
           h1 Always
+          event
+            == link_to "Feeding Frenzy", "/bible-study", class: "name"
+            .time Thursdays @ 6:45pm
           event
             == link_to "Bible Study", "/bible-study", class: "name"
             .time Thursdays @ 7:30pm
@@ -33,6 +44,9 @@ html
           event
             == link_to "The Retreat Formerly Known as the Christmas Retreat", "/retreats", class: "name"
             .time January 25th
+          event
+            .name Juarez House Building
+            .time Spring Break
       #navbar
         == link_to "Home", "/"
         == link_to "About", "/about"
@@ -48,6 +62,11 @@ html
           .city Atlanta, GA 30313
           .phone (404) 872-3856
           a.email href="mailto:hello@gtccf.org" hello@gtccf.org    
+        .social
+          a href="https://twitter.com/gtccf" class="twitter-follow-button" data-show-count="false" data-size="large" Follow @gtccf
+          javascript:
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+          div.fb-like-box data-href="http://www.facebook.com/gtccf" data-show-faces="false" data-stream="false" data-header="false"
         .contact
           == image_tag 'staff/rick.jpg', class: 'photo' 
           .name Rick Harper

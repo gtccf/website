@@ -58,9 +58,11 @@ $fade: #D0D0D0
       #special
         @include span-columns(4 omega, $columns)
     .contact
-      @include span-columns(3, 12)
+      @include span-columns(3 omega, 12)
     .address
-      @include span-columns(4,12)
+      @include span-columns(2,12)
+    .social
+      @include span-columns(2, 12)
 
 .page
   @include container($total-columns, $columns)
@@ -73,6 +75,10 @@ $fade: #D0D0D0
     clear: both
     margin-top: 1em
     border-top: 1px solid black
+    .contact
+      margin-right: 0.5em
+    .social
+      margin: 0.5em
     .address
       margin: 0.5em
       font-size: small
