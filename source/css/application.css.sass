@@ -1,3 +1,14 @@
+$blue: #37627C
+$green: #ABC272
+
+$total-columns  : 8             // a 12-column grid
+$column-width   : 5em            // each column is 4em wide
+$gutter-width   : 0.5em            // 1em gutters between columns
+$grid-padding   : $gutter-width  // grid-padding equal to gutters
+
+$columns: 12
+$breakpoint: 8
+
 @font-face
   font-family: Zeroes
   src: url('/css/zeroes.ttf')
@@ -10,18 +21,20 @@ h1, h2, h3
   padding: 0
   font-family: Zeroes
 
-
-$blue: #37627C
-$green: #ABC272
-
-$total-columns  : 8             // a 12-column grid
-$column-width   : 5em            // each column is 4em wide
-$gutter-width   : 0.5em            // 1em gutters between columns
-$grid-padding   : $gutter-width  // grid-padding equal to gutters
-
-$columns: 12
-$breakpoint: 8
-
+dl
+  padding: 0.5em
+dt
+  float: left
+  clear: left
+  width: 100px
+  text-align: right
+  font-weight: bold
+  color: $green
+dt:after
+  content: ":"
+dd
+  margin: 0 0 0 110px
+  padding: 0 0 0.5em 0
 
 @import "compass"
 @import "susy"
