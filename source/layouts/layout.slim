@@ -28,25 +28,29 @@ html
         #always
           h1 Always
           event
-            == link_to "Feeding Frenzy", "/bible-study", class: "name"
+            .name == link_to "Feeding Frenzy", "/bible-study" 
             .time Thursdays @ 6:45pm
           event
-            == link_to "Bible Study", "/bible-study", class: "name"
+            .name == link_to "Bible Study", "/bible-study" 
             .time Thursdays @ 7:30pm
           event
-            == link_to "Cafe", "/cafe", class: "name"
+            .name == link_to "Cafe", "/cafe"
             .time Tuesdays @ 8pm
           event    
-            == link_to "Trivia Lunch", "/trivia-lunch", class: "name"
+            .name == link_to "Trivia Lunch", "/trivia-lunch"
             .time Mondays @ 11am & 12pm
         #special    
           h2 Special
           event
-            == link_to "The Retreat Formerly Known as the Christmas Retreat", "https://www.facebook.com/events/184892041652869/", class: "name", target: "_blank"
+            .name == link_to "The Retreat Formerly Known as the Christmas Retreat", "https://www.facebook.com/events/184892041652869/", target: "_blank"
             .time January 25th
           event
             .name Juarez House Building
             .time Spring Break
+          event    
+            .name == link_to "All Events", "https://www.facebook.com/gtccf/events", class: "name", target: "_blank"
+                
+
       #navbar
         == link_to "Home", "/"
         == link_to "About", "/about"
