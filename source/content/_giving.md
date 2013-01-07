@@ -22,7 +22,7 @@ Please contact Ashley (Hightower) Teffeau with any questions concerning giving a
 
 To give to GTCCF we have various methods of payment: autodraft, PayPal, and checks.
 
-*Auto Draft Form* – [Download](http://gtccf.org/wp-content/uploads/2012/09/CCF-Autodraft-Form-Operational.doc) the form to begin autodraft. It is our most common giving method for monthly givers. You can set automatic withdrawls for free by filling out the form and sending it in by snail mail or making the approprioate edits to the form and attaching it in an email to [Ashley](ashley@gtccf.org).
+*Auto Draft Form* – [Download](https://docs.google.com/open?id=0BzjXf4TYaU7VV0VueFFxQjh0bFk) the form to begin autodraft. It is our most common giving method for monthly givers. You can set automatic withdrawls for free by filling out the form and sending it in by snail mail or making the approprioate edits to the form and attaching it in an email to [Ashley](ashley@gtccf.org).
 
 *PayPal Secure Payment* – You can also donate to CCF via Paypal. Please consider the fee when giving.
 
