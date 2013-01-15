@@ -36,7 +36,7 @@ html
         #brand
           == image_tag "logo.png"
         #always
-          h2 Always
+          h2 Events
           event
             .name == link_to "Feeding Frenzy", "/bible-study" 
             .time Thursdays @ 6:45pm
@@ -50,7 +50,7 @@ html
             .name == link_to "Trivia Lunch", "/trivia-lunch"
             .time Mondays @ 11am & 12pm
         #special    
-          h2 Special
+          h2 Special Events
           event
             .name == link_to "The Retreat Formerly Known as the Christmas Retreat", "https://www.facebook.com/events/184892041652869/", target: "_blank"
             .time January 25th
@@ -82,12 +82,12 @@ html
             !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
           div.fb-like-box data-href="http://www.facebook.com/gtccf" data-show-faces="false" data-stream="false" data-header="false"
         .contact
+          == image_tag 'staff/ashley.jpg', class: 'photo'
+          .name Ashley
+          .title Dir. Donor Devel.
+          a.email href="mailto:ashley@gtccf.org" ashley@gtccf.org
+        .contact
           == image_tag 'staff/rick.jpg', class: 'photo' 
           .name Rick Harper
           .title Campus Minister
           a.email href="mailto:rick@gtccf.org" rick@gtccf.org
-        .contact
-          == image_tag 'staff/baker.jpg', class: 'photo'
-          .name Neal Baker
-          .title Senior Assoc. Minister
-          a.email href="mailto:neal@gtccf.org" neal@gtccf.org
