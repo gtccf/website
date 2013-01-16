@@ -38,16 +38,16 @@ html
         #always
           h2 Events
           event
-            .name == link_to "Feeding Frenzy", "/bible-study" 
+            .name == link_to "Feeding Frenzy", "/bible-study.html" 
             .time Thursdays @ 6:45pm
           event
-            .name == link_to "Bible Study", "/bible-study" 
+            .name == link_to "Bible Study", "/bible-study.html" 
             .time Thursdays @ 7:30pm
           event
-            .name == link_to "Cafe", "/cafe"
+            .name == link_to "Cafe", "/cafe.html"
             .time Tuesdays @ 8pm
           event    
-            .name == link_to "Trivia Lunch", "/trivia-lunch"
+            .name == link_to "Trivia Lunch", "/trivia-lunch.html"
             .time Mondays @ 11am & 12pm
         #special    
           h2 Special Events
@@ -63,10 +63,10 @@ html
 
       #navbar
         == link_to "Home", "/"
-        == link_to "About", "/about"
-        == link_to "Give to CCF", "/giving"
-        == link_to "Compassion", "/compassion"
-        == link_to "Freshmen", "/freshmen"
+        == link_to "About", "/about.html"
+        == link_to "Give to CCF", "/giving.html"
+        == link_to "Compassion", "/compassion.html"
+        == link_to "Freshmen", "/freshmen.html"
       .content
         == yield
       footer
