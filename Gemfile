@@ -2,11 +2,11 @@ source :rubygems
 
 gem "slim"
 gem "susy"
-gem "therubyracer"
+gem "therubyracer", '~> 0.11.3'
 gem "rack-rewrite"
 gem "redcarpet"
-gem "middleman", "~>3.0.6"
-gem "middleman-sync", "~> 3.0.8"
+gem "middleman"
+gem "middleman-sync"
 gem "thin"
 
 group :development do
