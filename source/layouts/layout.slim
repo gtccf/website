@@ -11,6 +11,12 @@ html
     /[if lt IE 9]
       = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
     link href="images/favicon.ico" rel="shortcut icon"
+    javascript:
+        (function() {
+        var po = document.createElement("script"); po.type = "text/javascript"; po.async = true;
+        po.src = "https://apis.google.com/js/plusone.js?publisherid=103994782675027475973";
+        var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(po, s);
+        })();
   body
     #fb-root
     javascript:
