@@ -5,6 +5,7 @@ gem 'asset_sync'
 gem 'coffee-rails', '>= 4.0.0'
 gem "compass-rails", github: "milgner/compass-rails", branch: "rails4"
 gem 'foreman'
+gem 'font-awesome-sass-rails'
 gem 'jquery-rails'
 gem 'pg'
 gem 'rails', '4.0.0.rc2'
