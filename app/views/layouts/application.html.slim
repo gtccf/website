@@ -1,0 +1,92 @@
+doctype html
+html lang="en"
+  head
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    title #{content_for?(:title) ? yield(:title) : "Home"} | Georgia Tech Christian Campus Fellowship
+    == stylesheet_link_tag "application", media: "all"
+    == javascript_include_tag "application"
+    == csrf_meta_tags
+    /! Le HTML5 shim, for IE6-8 support of HTML elements
+    /[if lt IE 9]
+      = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
+    link href="images/favicon.ico" rel="shortcut icon"
+    javascript:
+        (function() {
+        var po = document.createElement("script"); po.type = "text/javascript"; po.async = true;
+        po.src = "https://apis.google.com/js/plusone.js?publisherid=103994782675027475973";
+        var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(po, s);
+        })();
+  body
+    #fb-root
+    javascript:
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=210752665690667";
+              fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'facebook-jssdk'));
+    javascript:
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-31013002-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    .page
+      header
+        #brand
+          == image_tag "logo.png"
+        #always
+          h2 Events
+          event
+            .name == link_to "Bible Study", "/bible-study.html" 
+            .time Thursdays @ 7:30pm
+          event    
+            .name Devo Dinner
+            .time Mondays @ 6pm
+          event
+            .name Fellini's Lunch Bunch
+            .time Wednesdays @ noon
+        #special
+          h2 Special Events
+          event
+            .name == link_to "All Events", "https://www.facebook.com/gtccf/events", class: "name", target: "_blank"
+
+
+      #navbar
+        == link_to "Home", "/"
+        == link_to "Staff", "/staff.html"
+        == link_to "Give to CCF", "/giving.html"
+        == link_to "Compassion", "/compassion.html"
+        == link_to "Freshmen", "/freshmen.html"
+        == link_to "Newsletter", "/newsletter.html"
+      .content
+        == yield
+      footer
+        .address
+          .name GT Christian Campus Fellowship
+          .street 767 Techwood Drive
+          .city Atlanta, GA 30313
+          .phone (404) 872-3856
+          a.email href="mailto:hello@gtccf.org" hello@gtccf.org
+        .social
+          a href="https://twitter.com/gtccf" class="twitter-follow-button" data-show-count="false" data-size="large" Follow @gtccf
+          javascript:
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+          div.fb-like-box data-href="http://www.facebook.com/gtccf" data-show-faces="false" data-stream="false" data-header="false"
+        .contact
+          == image_tag 'staff/ashley.jpg', class: 'photo'
+          .name Ashley
+          .title Dir. Donor Devel.
+          a.email href="mailto:ashley@gtccf.org" ashley@gtccf.org
+        .contact
+          == image_tag 'staff/rick.jpg', class: 'photo'
+          .name Rick Harper
+          .title Campus Minister
+          a.email href="mailto:rick@gtccf.org" rick@gtccf.org
