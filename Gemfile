@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 
+gem 'asset_sync'
 gem 'coffee-rails', '>= 4.0.0'
 gem "compass-rails", github: "milgner/compass-rails", branch: "rails4"
 gem 'foreman'
