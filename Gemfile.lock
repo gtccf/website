@@ -1,11 +1,3 @@
-GIT
-  remote: git://github.com/kurtisnelson/middleman-sync.git
-  revision: 55d7b83ec2b53de5e09d2a9d1fc7736f5e34298a
-  specs:
-    middleman-sync (3.0.9)
-      asset_sync (~> 0.5.4)
-      middleman-core (>= 3.0.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -29,18 +21,18 @@ GEM
       fssm (>= 0.2.7)
       sass (~> 3.1)
     daemons (1.1.9)
-    dotenv (0.7.0)
+    dotenv (0.8.0)
     eventmachine (1.0.3)
-    excon (0.22.1)
+    excon (0.23.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    ffi (1.8.1)
-    fog (1.11.1)
+    ffi (1.9.0)
+    fog (1.12.1)
       builder
-      excon (~> 0.20)
+      excon (~> 0.23.0)
       formatador (~> 0.2.0)
-      json (~> 1.7)
       mime-types
+      multi_json (~> 1.0)
       net-scp (~> 1.1)
       net-ssh (>= 2.1.3)
       nokogiri (~> 1.5.0)
@@ -52,15 +44,11 @@ GEM
     fssm (0.2.10)
     haml (4.0.3)
       tilt
-    hike (1.2.2)
-    http_router (0.10.2)
-      rack (>= 1.0.0)
-      url_mount (~> 0.2.1)
+    hike (1.2.3)
     i18n (0.6.4)
-    json (1.8.0)
     kramdown (1.0.2)
     libv8 (3.11.8.17)
-    listen (1.1.4)
+    listen (1.1.6)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
       rb-kqueue (>= 0.2)
@@ -85,30 +73,22 @@ GEM
       thor (>= 0.15.2, < 2.0)
       tilt (~> 1.3.6)
     middleman-more (3.1.0.rc.2)
-    middleman-sprockets (3.1.1)
+    middleman-sprockets (3.1.2)
       middleman-core (>= 3.0.14)
-      padrino-helpers (= 0.10.7)
+      middleman-more (>= 3.0.14)
       sprockets (~> 2.1)
       sprockets-helpers (~> 1.0.0)
       sprockets-sass (~> 1.0.0)
+    middleman-sync (3.0.10)
+      asset_sync (~> 0.5.4)
+      middleman-core (>= 3.0.0)
     mime-types (1.23)
-    multi_json (1.7.5)
+    multi_json (1.7.7)
     net-scp (1.1.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.6.7)
-    nokogiri (1.5.9)
-    padrino-core (0.10.7)
-      activesupport (~> 3.2.0)
-      http_router (~> 0.10.2)
-      sinatra (~> 1.3.1)
-      thor (~> 0.15.2)
-      tilt (~> 1.3.0)
-    padrino-helpers (0.10.7)
-      i18n (~> 0.6)
-      padrino-core (= 0.10.7)
+    nokogiri (1.5.10)
     rack (1.5.2)
-    rack-protection (1.5.0)
-      rack
     rack-rewrite (1.3.3)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -121,10 +101,6 @@ GEM
     ref (1.0.5)
     ruby-hmac (0.4.0)
     sass (3.2.9)
-    sinatra (1.3.6)
-      rack (~> 1.4)
-      rack-protection (~> 1.3)
-      tilt (~> 1.3, >= 1.3.3)
     slim (2.0.0)
       temple (~> 0.6.5)
       tilt (~> 1.3, >= 1.3.3)
@@ -149,13 +125,11 @@ GEM
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
       rack (>= 1.0.0)
-    thor (0.15.4)
+    thor (0.18.1)
     tilt (1.3.7)
     uglifier (2.1.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
-    url_mount (0.2.1)
-      rack
 
 PLATFORMS
   ruby
@@ -164,7 +138,7 @@ DEPENDENCIES
   foreman
   libv8
   middleman (= 3.1.0.rc.2)
-  middleman-sync!
+  middleman-sync
   rack-rewrite
   redcarpet
   slim
