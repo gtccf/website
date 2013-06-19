@@ -23,7 +23,7 @@ html lang="en"
             .collapse.nav-collapse
               ul.nav
                 li= link_to "Staff", admin_staff_index_path
-              = link_to "Logout", destroy_user_session_path, class: 'btn pull-right'
+              = link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn pull-right'
 
       .content
           = render partial: "layouts/messages"

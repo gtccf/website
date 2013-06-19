@@ -6,13 +6,14 @@ gem 'asset_sync'
 gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'coffee-rails', '>= 4.0.0'
-gem 'devise'
+gem 'devise', '3.0.0rc'
 gem 'draper'
 gem 'font-awesome-sass-rails'
 gem 'foreman'
 gem 'high_voltage'
 gem 'jquery-rails'
 gem 'mini_magick'
+gem 'omniauth-google-oauth2', github: 'zquestz/omniauth-google-oauth2'
 gem 'pg'
 gem 'rails', '4.0.0.rc2'
 gem 'redcarpet'
@@ -28,6 +29,7 @@ group :doc do
 end
 
 group :test, :development do
+  gem 'dotenv'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'forgery'
