@@ -3,8 +3,10 @@ ruby '2.0.0'
 
 gem "compass-rails", github: "milgner/compass-rails", branch: "rails4"
 gem 'asset_sync'
+gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'coffee-rails', '>= 4.0.0'
+gem 'devise'
 gem 'draper'
 gem 'font-awesome-sass-rails'
 gem 'foreman'

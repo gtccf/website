@@ -67,6 +67,10 @@ html lang="en"
         == link_to "Freshmen", page_path('freshmen')
         == link_to "Newsletter", page_path('newsletter')
       .content
+        - if flash[:notice]
+          p.notice = notice
+        - if flash[:alert]
+          p.alert = alert
         == yield
       footer
         .address
