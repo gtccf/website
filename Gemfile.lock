@@ -69,7 +69,7 @@ GEM
       activesupport (>= 3.0)
       request_store (~> 1.0.3)
     erubis (2.7.0)
-    excon (0.23.0)
+    excon (0.6.6)
     execjs (1.4.0)
       multi_json (~> 1.0)
     factory_girl (4.2.0)
@@ -138,6 +138,7 @@ GEM
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
+    redcarpet (2.3.0)
     request_store (1.0.5)
     rspec-core (2.13.1)
     rspec-expectations (2.13.0)
@@ -227,6 +228,7 @@ DEPENDENCIES
   launchy
   pg
   rails (= 4.0.0.rc2)
+  redcarpet
   rspec-rails
   sass-rails (= 4.0.0.rc2)
   sdoc
