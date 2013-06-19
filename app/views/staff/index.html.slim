@@ -5,5 +5,5 @@ h1.page-title About the Staff
     h2.name = staff.name
     .title = staff.title
     a.email href="mailto:#{staff.email}"= staff.email
-    == image_tag 'staff/rick.jpg', width: '150', class: 'photo'
+    == image_tag staff.portrait.square.url, width: '150', class: 'photo'
     == staff.about
