@@ -11,6 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20130619030431) do
+
+  create_table "staffs", force: true do |t|
+    t.string   "name"
+    t.string   "title"
+    t.string   "email"
+    t.text     "about"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

@@ -1,0 +1,9 @@
+h1.page-title About the Staff
+
+- @staff.each do |staff|
+  div.bio
+    h2.name = staff.name
+    .title = staff.title
+    a.email href="mailto:#{staff.email}"= staff.email
+    == image_tag 'staff/rick.jpg', width: '150', class: 'photo'
+    == staff.description
