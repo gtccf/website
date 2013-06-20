@@ -133,6 +133,9 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    markdown-rails (0.2.1)
+      rails
+      rdiscount (>= 1.6.8, < 2.0)
     mime-types (1.23)
     mini_magick (3.6.0)
       subexec (~> 0.2.1)
@@ -179,6 +182,7 @@ GEM
     rainbow (1.1.4)
     raindrops (0.11.0)
     rake (10.0.4)
+    rdiscount (1.6.8)
     rdoc (3.12.2)
       json (~> 1.4)
     redcarpet (2.3.0)
@@ -277,6 +281,7 @@ DEPENDENCIES
   high_voltage
   jquery-rails
   launchy
+  markdown-rails
   mini_magick
   omniauth-google-oauth2!
   pg
