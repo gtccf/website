@@ -14,7 +14,7 @@ gem 'high_voltage'
 gem 'jquery-rails'
 gem 'markdown-rails'
 gem 'mini_magick'
-gem 'omniauth-google-oauth2', github: 'zquestz/omniauth-google-oauth2'
+gem 'omniauth-google-oauth2'
 gem 'pg'
 gem 'rails', '4.0.0.rc2'
 gem 'rails_12factor'
@@ -39,8 +39,8 @@ group :test, :development do
 end
 group :test do
   gem 'capybara'
-  gem 'launchy'
-  gem 'database_cleaner'
   gem 'capybara-webkit'
-  gem 'simplecov'
+  gem 'coveralls'
+  gem 'database_cleaner'
+  gem 'launchy'
 end
