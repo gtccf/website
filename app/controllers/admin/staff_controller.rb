@@ -13,7 +13,7 @@ class Admin::StaffController < Admin::AdminController
   end
 
   def up
-    staff = Staff.find(params[:staff_id])
+    staff = Staff.find(params[:id])
     staff.weight -= 1
     staff.save
     redirect_to :back

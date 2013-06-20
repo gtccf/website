@@ -10,7 +10,7 @@
         td = staff.name
         td = staff.email
         td = staff.title
-        td = image_tag staff.portrait.square.url
+        td = image_tag staff.portrait.thumb.url
 .row-fluid
   = link_to "New Staff", new_admin_staff_path, class: 'btn btn-success'
   = link_to "Reset Sort", reset_sort_admin_staff_index_path, method: :put, class: 'btn btn-danger', confirm: "Are you sure?"
