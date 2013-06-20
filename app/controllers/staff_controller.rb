@@ -1,6 +1,6 @@
 class StaffController < ApplicationController
   def index
-    @staff = StaffDecorator.decorate(Staff.all)
+    @staff = StaffDecorator.decorate_collection(Staff.all)
   end
   
   def show
