@@ -2,6 +2,9 @@
 
 [![Dependency Status](https://gemnasium.com/kurtisnelson/ccf.png)](https://gemnasium.com/kurtisnelson/ccf)
 [![Code Climate](https://codeclimate.com/github/kurtisnelson/ccf.png)](https://codeclimate.com/github/kurtisnelson/ccf)
+[![Build Status](https://secure.travis-ci.org/kurtisnelson/ccf.png)](http://travis-ci.org/kurtisnelson/ccf)
+[![Coverage Status](https://coveralls.io/repos/kurtisnelson/ccf/badge.png?branch=master)](https://coveralls.io/r/kurtisnelson/ccf)
+
 =======
 
 ## Getting Setup
