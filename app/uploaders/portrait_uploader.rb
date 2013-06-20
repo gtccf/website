@@ -23,15 +23,15 @@ class PortraitUploader < CarrierWave::Uploader::Base
   # end
 
   version :thumb do
-     process scale: [50, 50]
+    process resize_to_fit: [50, 50]
   end
 
   version :square do
-    process scale: [150, 150]
+    process resize_to_fit: [150, 150]
   end
 
   def extension_white_list
-     %w(jpg jpeg gif png)
+    %w(jpg jpeg gif png)
   end
 
   def default_url
