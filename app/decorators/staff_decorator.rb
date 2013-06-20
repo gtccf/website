@@ -1,7 +1,8 @@
 class StaffDecorator < Draper::Decorator
   delegate_all
 
-  def about
+  def pretty_about
+    return "" unless source.about
     require 'redcarpet'
     renderer = Redcarpet::Render::HTML.new
     redcarpet = Redcarpet::Markdown.new(renderer)

@@ -1,0 +1,8 @@
+= simple_form_for [:admin, staff] do |f|
+  = f.input :name
+  = f.input :title
+  = f.input :email
+  = f.input :portrait
+  = f.input :about
+  .form-actions
+    = f.submit nil, class: 'btn btn-primary'

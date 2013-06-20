@@ -1,0 +1,16 @@
+.row-fluid
+  table.table
+    - @staff.each do |staff|
+      tr
+        td
+          = link_to "View", admin_staff_path(staff), class: 'btn btn-primary'
+          = button_to "Delete", admin_staff_path(staff), method: :delete, class: 'btn btn-danger', confirm: "Are you sure you want to fire #{staff.name}?"
+          = button_to up_admin_staff_path(staff), method: :put, class: 'btn' do
+            i.icon-arrow-up
+        td = staff.name
+        td = staff.email
+        td = staff.title
+        td = image_tag staff.portrait.square.url
+.row-fluid
+  = link_to "New Staff", new_admin_staff_path, class: 'btn btn-success'
+  = link_to "Reset Sort", reset_sort_admin_staff_index_path, method: :put, class: 'btn btn-danger', confirm: "Are you sure?"
