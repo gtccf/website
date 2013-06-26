@@ -7,7 +7,8 @@ class DevotionsController < ApplicationController
   end
 
   def today
-    @devotion = Devotion.today.decorate
+    @devotion = Devotion.today
+    @devotion = DevotionDecorator.decorate(@devotion) if @devotion
   end
 
   # GET /devotions/1
