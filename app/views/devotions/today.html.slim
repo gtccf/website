@@ -1,0 +1,7 @@
+- if @devotion
+  h1 Today's Devotion
+  h2 = @devotion.title    
+  p.lead = @devotion.release_date
+  = @devotion.pretty_body
+- else
+  p No devotion for today.

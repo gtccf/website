@@ -1,0 +1,12 @@
+h1 Listing Devotions
+table
+  thead
+    th Title
+    th Release Date
+    th
+  - @devotions.each do |devotion|
+    tr
+      td = devotion.title
+      td = devotion.release_date
+      td = link_to "Show", admin_devotion_path(devotion)
+= link_to "New", new_admin_devotion_path

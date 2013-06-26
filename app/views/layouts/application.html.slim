@@ -62,9 +62,9 @@ html lang="en"
       #navbar
         == link_to "Home", root_path
         == link_to "Staff", staff_index_path
+        == link_to "Devotion", today_devotions_path
         == link_to "Give to CCF", page_path('giving')
         == link_to "Compassion", page_path('compassion')
-        == link_to "Freshmen", page_path('freshmen')
         == link_to "Newsletter", page_path('newsletter')
         - if current_user.try(:admin?)
           == link_to "Admin", admin_root_path

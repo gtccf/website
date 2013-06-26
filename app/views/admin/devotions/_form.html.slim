@@ -1,0 +1,10 @@
+= simple_form_for([:admin, @devotion]) do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :title
+    = f.input :release_date
+    = f.input :body
+
+  .actions
+    = f.button :submit

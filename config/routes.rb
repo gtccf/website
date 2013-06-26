@@ -1,9 +1,15 @@
 Ccf::Application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
-  resources 'staff', only: [:index]
+  resources :staff, only: [:index]
+  resources :devotions, only: [:index] do
+    collection do
+      get 'today'
+    end
+  end
 
   namespace 'admin' do
-    resources 'staff' do
+    resources :devotions
+    resources :staff do
       member do
         put 'up'
       end

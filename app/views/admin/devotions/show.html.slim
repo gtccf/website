@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @devotion.title
+p
+  strong Release date:
+  = @devotion.release_date
+p
+  strong Body:
+  = @devotion.pretty_body
+
+= link_to 'Edit', edit_admin_devotion_path(@devotion)
+'|
+= link_to 'Back', devotions_path
