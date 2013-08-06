@@ -48,11 +48,8 @@ html lang="en"
             .name == link_to "Bible Study", page_path('bible-study')
             .time Thursdays @ 7:30pm
           event    
-            .name Devo Dinner
-            .time Mondays @ 6pm
-          event
-            .name Fellini's Lunch Bunch
-            .time Wednesdays @ noon
+            .name Trivia Lunch
+            .time Mondays @ 11am and noon
         #special
           h2 Special Events
           event
@@ -62,7 +59,8 @@ html lang="en"
       #navbar
         == link_to "Home", root_path
         == link_to "Staff", staff_index_path
-        == link_to "Devotion", today_devotions_path
+        - if Devotion.today
+          == link_to "Devotion", today_devotions_path
         == link_to "Give to CCF", page_path('giving')
         == link_to "Compassion", page_path('compassion')
         == link_to "Newsletter", page_path('newsletter')
