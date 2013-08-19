@@ -20,5 +20,6 @@ Ccf::Application.routes.draw do
     end
     root to: 'admin#index'
   end
+  get '/lifegroups', to: redirect('https://docs.google.com/a/gtccf.org/spreadsheet/viewform?formkey=dDAwS0x1cHhUNTU1OWVwcGQ1YnhOaEE6MQ#gid=0')
   root to: 'home#index'
 end
