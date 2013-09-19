@@ -25,6 +25,7 @@ Devise.setup do |config|
 
   # Setup a pepper to generate the encrypted password.
   config.pepper = "99a60d650d258213561234aa98ffb9123242"
+  config.secret_key = '07cc5cab47757f00023f105057d816c35ad1f7504c0f74cd758f5b3c4564b15352c1536a77bfb52fa98772d856c4553f70796f09d607068d285e39c366085296'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -46,7 +47,6 @@ Devise.setup do |config|
 
   # If true, uses the password salt as remember token. This should be turned
   # to false if you are not using database authenticatable.
-  config.use_salt_as_remember_token = true
 
   # ==> Configuration for :validatable
   # Range for password length. Default is 6..128.
