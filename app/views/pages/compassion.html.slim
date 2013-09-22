@@ -2,13 +2,13 @@ iframe width="420" height="315" src="//www.youtube.com/embed/oFAffd5xmwA" frameb
 
 h2 Upcoming Events
 dl
-  dt Restoration ATL
-  dd September 28 at 9am. A service Saturday. Come to CCF for a free breakfast and then break out and serve the community. Projects vary in length.
-  dt OK, Go! Fall Break Trip.
-  dd
-    ' Info Session Thursday 9/26 at 11:00am on the roof of the CULC. Serve Moore, Oklahoma by helping with tornado relief. October 11-15. Cost is $100.
-    a href="https://drive.google.com/folderview?id=0BzjXf4TYaU7VM25VTUhISE82RDA&usp=sharing" More Information
-
+  - Event.tagged_with("Compassion").each do |event|
+    dt = event.title
+    dd
+      =' event.pretty_time
+      ' -
+      =' event.short_description
+      = link_to "More", event_path(event)
 
 h2 Mondays
 dl
@@ -42,23 +42,3 @@ h2 Friday
 dl
   dt 1:30-3 pm
   dd Write letters of encouragement to inmates at the Atlanta Transitional Facility
-
-h2 Restoration Atlanta Locations
-
-h3 Support Cancer Victims
-p CCF is close to several families affected by cancer. To help them out we do yard work around their houses, provide child-care for one day and really help them out with any service they may need for one day.
-
-h3 Saturday on the Streets
-p We partner with an organization called church on the streets and participate in their Saturday program. Instead of handing out food or providing shelter like a traditional homeless shelter, Church on the Streets is dedicated to restoring relationships with the homeless of Atlanta.  A day on the streets usually involves conversation, coffee and maybe playing some chess with homeless friends.
-
-h3 Fight Sex Trafficking
-p CCF will be beginning a partnership with Wellspring Living, a place for rehabilitation and safety of women affected by sex-trafficking. In order to participate, volunteers must go through a one day training course. September 28th will be one of these courses. Only female volunteers will be able to participate in this event.
-
-h3 Care For Aids
-p A representative from Care for Aids will be at CCF to tell volunteers how they can help. This Project will take place on site at CCF
-
-h3 Dream Center
-p The Atlanta Dream Center is another organization dedicated to building relationships with families and children. Volunteers will go to one of the neighborhoods that the Atlanta Dream Center frequents to play with kids and offer assistance to the families in the area. All neighborhoods are filled with government subsidized apartments.
-
-h3 City of Refuge
-p Volunteers will help to organize and run a field day with kids that go to city of refuge.

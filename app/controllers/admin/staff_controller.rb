@@ -41,7 +41,7 @@ class Admin::StaffController < Admin::AdminController
         flash[:success] = 'Updated staff successfully'
         format.html { redirect_to [:admin, @staff] }
       else
-        format.html { render 'new', status: 400 }
+        format.html { render 'edit', status: 400 }
       end
     end
   end

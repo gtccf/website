@@ -24,11 +24,12 @@ html lang="en"
               ul.nav
                 li= link_to "Staff", admin_staff_index_path
                 li= link_to "Devotions", admin_devotions_path
+                li= link_to "Events", admin_events_path
               = link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn pull-right'
 
       .content
           = render partial: "layouts/messages"
           = yield
-    
+
       footer
           p &copy; #{Date.today.year}

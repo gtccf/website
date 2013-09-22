@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130626171412) do
+ActiveRecord::Schema.define(version: 20130922162720) do
 
   create_table "devotions", force: true do |t|
     t.string   "title"
@@ -20,6 +20,23 @@ ActiveRecord::Schema.define(version: 20130626171412) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "events", force: true do |t|
+    t.string   "title"
+    t.datetime "time"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "short_description"
+  end
+
+  create_table "events_tags", id: false, force: true do |t|
+    t.integer "event_id"
+    t.integer "tag_id"
+  end
+
+  add_index "events_tags", ["event_id"], name: "index_events_tags_on_event_id", using: :btree
+  add_index "events_tags", ["tag_id"], name: "index_events_tags_on_tag_id", using: :btree
 
   create_table "staffs", force: true do |t|
     t.string   "name"
@@ -30,6 +47,12 @@ ActiveRecord::Schema.define(version: 20130626171412) do
     t.datetime "updated_at"
     t.string   "portrait"
     t.integer  "weight",     default: 0
+  end
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

@@ -1,0 +1,14 @@
+= link_to "New", new_admin_event_path
+table
+  thead
+    th Title
+    th Time
+    th
+  tbody
+    - @events.each do |event|
+      tr
+        td = event.title
+        td = event.time
+        td
+          = link_to "Show", admin_event_path(event)
+          = link_to "Edit", edit_admin_event_path(event)

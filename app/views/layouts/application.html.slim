@@ -52,8 +52,10 @@ html lang="en"
             .time Mondays @ 11am and noon
         #special
           h2 Special Events
-          event
-            .name == link_to "All Events", "https://www.facebook.com/gtccf/events", class: "name", target: "_blank"
+          - Event.next(3).each do |event|
+            event
+              .name = link_to event.title, event_path(event)
+              .time = event.pretty_time
 
 
       #navbar
