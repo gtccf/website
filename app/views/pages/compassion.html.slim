@@ -2,7 +2,7 @@ iframe width="420" height="315" src="//www.youtube.com/embed/oFAffd5xmwA" frameb
 
 h2 Upcoming Events
 dl
-  - Event.tagged_with("Compassion").each do |event|
+  - Event.tagged("Compassion").future.map{|e| e.decorate}.each do |event|
     dt = event.title
     dd
       =' event.pretty_time
