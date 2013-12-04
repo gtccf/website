@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 
-gem "compass-rails", github: "milgner/compass-rails", branch: "rails4"
+gem "compass-rails", "~> 2.0.alpha.0"
 gem 'asset_sync'
 gem 'bootstrap-sass'
 gem 'carrierwave'
