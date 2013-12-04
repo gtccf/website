@@ -1,9 +1,9 @@
-.row-fluid
-  h1.span3= @staff.name
-  h2.span3= @staff.title
-  h3.span2= @staff.email
-  .offset2.span2= image_tag @staff.portrait.url
-.row-fluid
+.row
+  h1.col-md-3= @staff.name
+  h2.col-md-3= @staff.title
+  h3.col-md-2= @staff.email
+  .col-md-offset-2.col-md-2= image_tag @staff.portrait.url
+.row
   == @staff.pretty_about
-.row-fluid
+.row
   = link_to "Edit", edit_admin_staff_path(@staff), class: 'btn'
