@@ -3,10 +3,16 @@ table
     th Name
     th Email
     th
+    th
   tbody
     - @users.each do |user|
       tr
         td = user.name
         td = user.email
         td
-          = link_to "Show", admin_user_path(user)
+          - if user.admin?
+            .label.label-primary Admin
+          - else
+            .label.label-default User
+        td
+          = link_to "Show", admin_user_path(user), class: 'btn'
