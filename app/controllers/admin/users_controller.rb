@@ -1,10 +1,10 @@
 class Admin::UsersController < Admin::AdminController
   def index
-    @users = User.all
+    @users = UserDecorator.decorate_collection(User.all)
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(params[:id]).decorate
   end
 
   def edit
