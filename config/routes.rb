@@ -12,6 +12,12 @@ Ccf::Application.routes.draw do
   namespace 'admin' do
     resources :devotions
     resources :events
+    resources :users do
+      member do
+        put 'promote'
+        put 'demote'
+      end
+    end
     resources :staff do
       member do
         put 'up'

@@ -1,0 +1,12 @@
+table
+  thead
+    th Name
+    th Email
+    th
+  tbody
+    - @users.each do |user|
+      tr
+        td = user.name
+        td = user.email
+        td
+          = link_to "Show", admin_user_path(user)
