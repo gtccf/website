@@ -2,7 +2,7 @@ h1 = @user.name
 h2 = @user.email
 - if @user.admin?
   .label.label-primary Administrator
-  = link_to "Demote", demote_admin_user_path(@user), class: 'btn btn-warning btn-xs'
+  = link_to "Demote", demote_admin_user_path(@user), class: 'btn btn-warning btn-xs', method: :put
 - else
   .label.label-default User
-  = link_to "Promote", promote_admin_user_path(@user), class: 'btn btn-danger btn-xs'
+  = link_to "Promote", promote_admin_user_path(@user), class: 'btn btn-danger btn-xs', method: :put

@@ -25,7 +25,18 @@ class Admin::UsersController < Admin::AdminController
     @user = User.find(params[:id])
     @user.admin = true
     if @user.save
-      flash[:success] = "Made admin"
+      flash[:success] = "Promoted"
+      redirect_to [:admin, @user]
+    else
+      render 'show', status: 400
+    end
+  end
+
+  def demote
+    @user = User.find(params[:id])
+    @user.admin = false
+    if @user.save
+      flash[:success] = "Demoted"
       redirect_to [:admin, @user]
     else
       render 'show', status: 400
