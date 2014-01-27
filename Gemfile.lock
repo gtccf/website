@@ -34,6 +34,9 @@ GEM
     bcrypt-ruby (3.1.2)
     bootstrap-sass (3.0.3.0)
       sass (~> 3.2)
+    bourbon (3.1.8)
+      sass (>= 3.2.0)
+      thor
     builder (3.1.4)
     capybara (2.2.1)
       mime-types (>= 1.16)
@@ -48,7 +51,6 @@ GEM
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       json (>= 1.7)
-    chunky_png (1.2.9)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -56,12 +58,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    compass (0.12.2)
-      chunky_png (~> 1.2)
-      fssm (>= 0.2.7)
-      sass (~> 3.1)
-    compass-rails (1.1.3)
-      compass (>= 0.12.2)
     coveralls (0.7.0)
       multi_json (~> 1.3)
       rest-client
@@ -110,7 +106,6 @@ GEM
       thor (>= 0.13.6)
     forgery (0.5.0)
     formatador (0.2.4)
-    fssm (0.2.10)
     hashie (2.0.5)
     high_voltage (2.1.0)
     hike (1.2.3)
@@ -138,10 +133,12 @@ GEM
     multi_json (1.8.4)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    neat (1.5.0)
+      bourbon (>= 2.1)
+      sass (>= 3.2)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (2.7.0)
-    newrelic_rpm (3.7.1.188)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     oauth2 (0.9.3)
@@ -243,9 +240,6 @@ GEM
       activesupport (>= 3.0)
       sprockets (~> 2.8)
     subexec (0.2.3)
-    susy (1.0.9)
-      compass (>= 0.12.2)
-      sass (>= 3.2.0)
     temple (0.6.7)
     term-ansicolor (1.2.2)
       tins (~> 0.8)
@@ -278,11 +272,11 @@ PLATFORMS
 DEPENDENCIES
   asset_sync
   bootstrap-sass
+  bourbon
   capybara
   capybara-webkit
   carrierwave
   coffee-rails
-  compass-rails
   coveralls
   database_cleaner
   devise
@@ -297,7 +291,7 @@ DEPENDENCIES
   launchy
   markdown-rails
   mini_magick
-  newrelic_rpm
+  neat
   omniauth-google-oauth2
   omniauth-gplus
   pg
@@ -309,7 +303,6 @@ DEPENDENCIES
   sdoc
   simple_form
   slim-rails
-  susy
   turbolinks
   uglifier
   unicorn

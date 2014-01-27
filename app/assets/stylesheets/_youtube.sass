@@ -1,6 +1,5 @@
 #player
-  @include at-breakpoint(8)
-    @include span-columns(2, 3)
+  @include span-columns(2 of 3)
   height: 300px
   overflow: hidden
   position: relative
@@ -8,7 +7,7 @@
   margin: 5px
 
 .youtube .carousel
-  @include span-columns(1 omega, 6)
+  @include span-columns(1 of 6)
   height: 100%
   overflow: auto
   position: absolute
@@ -21,8 +20,8 @@
   background: $green
 
 .youtube iframe.player
-  @include span-columns(6, 7)
-  height: 278px  
+  @include span-columns(6 of 7)
+  height: 278px
   overflow: auto
   border: 0
 
