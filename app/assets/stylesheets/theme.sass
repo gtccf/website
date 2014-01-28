@@ -19,7 +19,12 @@ body
   background-size: cover
   background-attachment: fixed
   background-repeat: no-repeat
-  //background-image: image-url('background.jpg')
+  background-image: image-url('background.jpg')
+.page
+  background-color: white
+  @include pad(golden-ratio(1.5%, 1))
+  padding-top: 0
+  margin: golden-ratio(1.5%, 1)
 header
   @include row
   border-bottom: 1px solid black
