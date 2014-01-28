@@ -1,0 +1,18 @@
+section#events
+  #always
+    h2 Events
+    event
+      .name == link_to "Bible Study", page_path('bible-study')
+      .time Thursdays @ 7:30pm
+    event
+      .name == link_to "Cafe", page_path('cafe')
+      .time Tuesdays @ 8:00pm
+    event
+      .name Trivia Lunch
+      .time Mondays @ 11am and noon
+  #special
+    h2 Special Events
+    - Event.next(3).map{|e| e.decorate}.each do |event|
+      event
+        .name = link_to event.title, event_path(event)
+        .time = event.pretty_time

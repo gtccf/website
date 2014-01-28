@@ -20,13 +20,17 @@ body
   background-attachment: fixed
   background-repeat: no-repeat
   background-image: image-url('background.jpg')
+
 .page
   background-color: white
   @include pad(golden-ratio(1.5%, 1))
   padding-top: 0
   margin: golden-ratio(1.5%, 1)
+  overflow: auto
+
 header
-  @include row
+  @include span-columns(12)
+  @include row(table)
   border-bottom: 1px solid black
   #brand
     @include media($mobile)
@@ -75,6 +79,19 @@ header
         @include pad(8px)
         @include media($mobile)
           left: 0
+
+.content
+  @include span-columns(9)
+  @include pad
+
+#events
+  @include span-columns(3)
+  @include omega
+  @include reset-display
+  @include pad
+
+footer
+  @include span-columns(12)
 
 event
   .name, .name a

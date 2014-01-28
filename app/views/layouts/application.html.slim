@@ -37,6 +37,7 @@ html lang="en"
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
 
+
     .page
       header
         #brand
@@ -64,30 +65,13 @@ html lang="en"
                   li== link_to "Logout", destroy_user_session_path, method: :delete
                 - else
                   li==link_to 'Login', new_user_session_path
-      section
-        #always
-          h2 Events
-          event
-            .name == link_to "Bible Study", page_path('bible-study')
-            .time Thursdays @ 7:30pm
-          event
-            .name == link_to "Cafe", page_path('cafe')
-            .time Tuesdays @ 8:00pm
-          event
-            .name Trivia Lunch
-            .time Mondays @ 11am and noon
-        #special
-          h2 Special Events
-          - Event.next(3).map{|e| e.decorate}.each do |event|
-            event
-              .name = link_to event.title, event_path(event)
-              .time = event.pretty_time
       .content
         - if flash[:notice]
           p.notice = notice
         - if flash[:alert]
           p.alert = alert
         == yield
+      == render 'content/events'
       footer
         .address
           .name GT Christian Campus Fellowship
