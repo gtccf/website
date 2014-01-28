@@ -1,7 +1,8 @@
 $primary: #37627C
 $accent: #93CEEE
-$header: #FFF
-$mobile: new-breakpoint(max-width 500px 4)
+$main: #FFF
+$header: $main
+$mobile: new-breakpoint(max-width 790px 4)
 
 *
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
@@ -22,17 +23,16 @@ body
   background-image: image-url('background.jpg')
 
 .page
-  background-color: white
   @include pad(golden-ratio(1.5%, 1))
   padding-top: 0
   margin: golden-ratio(1.5%, 1)
   overflow: auto
+  @include linear-gradient($main, lighten($accent, 20%))
 
 header
   @include span-columns(12)
   @include row(table)
-  border-bottom: 1px solid black
-  background-color: $header
+  border-bottom: 1px solid $primary
   #brand
     @include media($mobile)
       @include row
@@ -48,6 +48,7 @@ header
         @include button($primary)
   #navbar
     @include span-columns(8)
+    margin-top: 30px
     @include media($mobile)
       width: 100%
       ul
@@ -70,10 +71,12 @@ header
       position: absolute
       border: 1px solid black
       background-color: $header
+      z-index: 99
       @include media($mobile)
         border: 0
         position: relative
       li
+        z-index: 100
         @include row
         width: 100%
         position: relative
@@ -85,18 +88,58 @@ header
 .content
   @include span-columns(9)
   @include pad
+  @include media($mobile)
+    @include span-columns(4 of 4)
+
+#paypal
+  @include pad(5px)
+  form
+    @include span-columns(3 of 9)
+    @include media($mobile)
+      @include span-columns(4 of 4)
 
 #events
   @include span-columns(3)
-  @include omega
   @include reset-display
   @include pad
+  @include omega
+  border-right: 1px solid $primary
+  @include media($mobile)
+    @include span-columns(4 of 4)
 
 footer
   @include span-columns(12)
+  @include pad(2px)
+  font-size: golden-ratio(6pt, 1)
 
+.address
+  @include span-columns(3 of 12)
+  @include media($mobile)
+    @include span-columns(4 of 4)
+
+.social
+  @include span-columns(3 of 12)
+  @include media($mobile)
+    @include span-columns(4 of 4)
+
+.contact
+  @include span-columns(3 of 12)
+  border: 2px solid $accent
+  background-color: darken($main, 1%)
+  @include pad(5px)
+  img
+    @include span-columns(1 of 3)
+  .email
+    float: right
+  @include media($mobile)
+    @include span-columns(2 of 4)
 event
   .name, .name a
     color: black
   .time
     font-size: small
+.top-video, .top-video embed
+  width: 700px
+  height: 385px
+  margin-left: auto
+  margin-right: auto

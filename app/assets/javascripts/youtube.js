@@ -53,7 +53,7 @@ http://www.apache.org/licenses/LICENSE-2.0
         var desc;
         var container;
         if (img.length !== 0) return;
-        img = $('<img align="left" width="80px">');
+        img = $('<img>');
         img.addClass('thumbnail');
         jqe.append(img);
         img.attr('src', imgurl);

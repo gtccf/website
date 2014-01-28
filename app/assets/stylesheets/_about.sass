@@ -1,23 +1,26 @@
 .bio
+  @include row
   border-radius: 5px
   border: 1px solid $primary
   background-color: white
   margin: 5px
   margin-bottom: 10px
-  padding: 5px
-  .name
-    margin: 5px
-    @include span-columns(2 of 5)
-  .title
-    font-family: Zeroes
-    @include span-columns(1 of 5)
-    font-weight: bold
-  .email
-    @include span-columns(1 of 5)
-  .photo
-    @include span-columns(1 of 5)
-    max-height: 75px
-    max-width: 75px
+  .description
+    .name
+      float: left
+      margin: 5px
+    .title
+      float: left
+      font-family: Zeroes
+      font-weight: bold
+      margin: 5px
+    .email
+      float: left
+      margin: 5px
+    .photo
+      float: right
+      max-height: 75px
+      max-width: 75px
   .big-photo
     max-height: 150px
     max-width: 150px

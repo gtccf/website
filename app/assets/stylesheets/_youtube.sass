@@ -1,28 +1,37 @@
 #player
-  @include span-columns(2 of 3)
+  @include span-columns(9 of 9)
   height: 300px
   overflow: hidden
   position: relative
   padding: 5px
   margin: 5px
+  @include media($mobile)
+    @include span-columns(4 of 4)
 
 .youtube .carousel
-  @include span-columns(1 of 6)
+  @include span-columns(4 of 9)
+  @include omega
   height: 100%
-  overflow: auto
-  position: absolute
-  right: 0px
   z-index: 3
+  overflow: auto
+  @include media($mobile)
+    @include span-columns(1 of 4)
 
 .youtube .thumbnail
+  @include span-columns(2 of 4)
+  @include omega(2n)
   padding: 1px
   margin: 2px
+  @include media($mobile)
+    @include span-columns(1 of 1)
 
 .youtube iframe.player
-  @include span-columns(6 of 7)
+  @include span-columns(5 of 9)
   height: 278px
   overflow: auto
   border: 0
+  @include media($mobile)
+    @include span-columns(3 of 4)
 
 .carItemContain
   height: 110px
