@@ -32,6 +32,7 @@ header
   @include span-columns(12)
   @include row(table)
   border-bottom: 1px solid black
+  background-color: $header
   #brand
     @include media($mobile)
       @include row
@@ -68,6 +69,7 @@ header
       display: none
       position: absolute
       border: 1px solid black
+      background-color: $header
       @include media($mobile)
         border: 0
         position: relative
