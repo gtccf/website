@@ -1,4 +1,3 @@
-doctype html
 html lang="en"
   head
     meta charset="utf-8"
@@ -42,6 +41,30 @@ html lang="en"
       header
         #brand
           == image_tag "logo.png"
+          button.toggle data-target=".navbar-list.main"
+            i.fa.fa-bars
+        #navbar
+          ul.navbar-list.main
+            li== link_to "Home", root_path
+            li== link_to "Staff", staff_index_path
+            - if Devotion.today
+              li== link_to "Devotion", today_devotions_path
+            li== link_to "Give to CCF", page_path('giving')
+            li== link_to "Compassion", page_path('compassion')
+            li== link_to "Life Groups", lifegroups_path
+            li
+              a.toggle data-target=".navbar-list.more" href="#"
+                | More
+                b.caret
+              ul.navbar-list.more
+                li== link_to "Newsletter", page_path('newsletter')
+                - if current_user.try(:admin?)
+                  li== link_to "Admin", admin_root_path
+                - if current_user
+                  li== link_to "Logout", destroy_user_session_path, method: :delete
+                - else
+                  li==link_to 'Login', new_user_session_path
+      section
         #always
           h2 Events
           event
@@ -59,21 +82,6 @@ html lang="en"
             event
               .name = link_to event.title, event_path(event)
               .time = event.pretty_time
-
-
-      #navbar
-        == link_to "Home", root_path
-        == link_to "Staff", staff_index_path
-        - if Devotion.today
-          == link_to "Devotion", today_devotions_path
-        == link_to "Give to CCF", page_path('giving')
-        == link_to "Compassion", page_path('compassion')
-        == link_to "Newsletter", page_path('newsletter')
-        == link_to "Life Groups", lifegroups_path
-        - if current_user.try(:admin?)
-          == link_to "Admin", admin_root_path
-        - if current_user 
-          == link_to "Logout", destroy_user_session_path, method: :delete
       .content
         - if flash[:notice]
           p.notice = notice
@@ -87,9 +95,6 @@ html lang="en"
           .city Atlanta, GA 30313
           .phone (404) 872-3856
           a.email href="mailto:hello@gtccf.org" hello@gtccf.org
-          - unless current_user
-            br
-            ==link_to 'Staff Login', new_user_session_path
         .social
           a href="https://twitter.com/gtccf" class="twitter-follow-button" data-show-count="false" data-size="large" Follow @gtccf
           javascript:

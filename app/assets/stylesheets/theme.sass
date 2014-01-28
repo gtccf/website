@@ -1,0 +1,78 @@
+$primary: #37627C
+$accent: #93CEEE
+$header: #FFF
+$mobile: new-breakpoint(max-width 500px 4)
+
+*
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+p
+  font-size: golden-ratio(8pt, 1)
+
+h1, h2, h3
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+
+dt:after
+  content: ":"
+
+body
+  @include outer-container
+  background-size: cover
+  background-attachment: fixed
+  background-repeat: no-repeat
+  //background-image: image-url('background.jpg')
+header
+  @include row
+  border-bottom: 1px solid black
+  #brand
+    @include media($mobile)
+      @include row
+    img
+      margin: 10px
+      @include span-columns(3)
+    button.toggle
+      display: none
+      @include media($mobile)
+        margin: 10px
+        min-height: 25pt
+        float: right
+        @include button($primary)
+  #navbar
+    @include span-columns(8)
+    @include media($mobile)
+      width: 100%
+      ul
+        @include pad(0)
+        margin: 0
+        display: none
+    li
+      @include span-columns(1 of 8, "table")
+      @include media($mobile)
+        @include span-columns(2 of 4)
+        @include omega(2n)
+        @include pad(8px)
+      a
+        color: $primary
+        text-decoration: none
+        &:hover
+          color: lighten($primary, 10%)
+    ul ul
+      display: none
+      position: absolute
+      border: 1px solid black
+      @include media($mobile)
+        border: 0
+        position: relative
+      li
+        @include row
+        width: 100%
+        position: relative
+        left: -25pt
+        @include pad(8px)
+        @include media($mobile)
+          left: 0
+
+event
+  .name, .name a
+    color: black
+  .time
+    font-size: small

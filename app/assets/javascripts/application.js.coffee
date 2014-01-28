@@ -1,3 +1,5 @@
 #= require jquery
 #= require jquery_ujs
-#= require_tree .
+#= require "holder.js"
+#= require "youtube.js"
+#= require "binding.coffee"
