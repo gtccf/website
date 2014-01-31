@@ -12,5 +12,9 @@ table
         td = event.pretty_time
         td = event.pretty_recurring
         td
-          = link_to "Show", admin_event_path(event)
-          = link_to "Edit", edit_admin_event_path(event)
+          = link_to "Edit", edit_admin_event_path(event), class: 'btn btn-primary'
+          = link_to "Delete", admin_event_path(event), method: :delete, class: 'btn btn-danger'
+        td
+          - unless event.enabled
+            span.label.label-warning Hidden
+= link_to "New", new_admin_event_path, class: "btn btn-primary"

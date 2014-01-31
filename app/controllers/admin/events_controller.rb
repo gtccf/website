@@ -37,6 +37,16 @@ class Admin::EventsController < Admin::AdminController
     end
   end
 
+  def destroy
+    @event = Event.find(params[:id])
+    if @event.destroy
+      flash[:success] = "Event destroyed"
+      redirect_to admin_event_path
+    else
+      render 'show', status: 400
+    end
+  end
+
   private
   def event_params
     params.require(:event).permit(
