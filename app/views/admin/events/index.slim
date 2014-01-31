@@ -1,5 +1,4 @@
-= link_to "New", new_admin_event_path
-table
+table.table
   thead
     th Title
     th Time
@@ -8,7 +7,7 @@ table
   tbody
     - @events.each do |event|
       tr
-        td = event.title
+        td = link_to event.title, admin_event_path(event)
         td = event.pretty_time
         td = event.pretty_recurring
         td

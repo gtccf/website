@@ -1,7 +1,9 @@
 = simple_form_for [:admin, @event] do |f|
   = f.input :title
   = f.input :time
+  = @event.recurring.to_s
+  = f.input :enabled
   = f.input :short_description
-  = f.input :description
+  = f.input :description, input_html: {rows: 15, cols: 90}
   = f.association :tags
-  = f.submit
+  = f.button :submit, class: 'btn btn-primary'

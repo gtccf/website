@@ -1,9 +1,10 @@
 h1 = @event.title
 h2 = @event.pretty_time
+- unless @event.enabled
+  span.label.label-warning Hidden
 h3
   ' Recurs
   = @event.pretty_recurring
-
 p = @event.short_description
 == @event.pretty_description
 
