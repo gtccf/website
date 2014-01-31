@@ -11,7 +11,17 @@ class EventDecorator < Draper::Decorator
   end
 
   def pretty_time
-    object.time.to_formatted_s(:long_ordinal)
+    if object.next_occurrence
+      object.next_occurrence.to_formatted_s(:long_ordinal)
+    else
+      "Past"
+    end
+  end
+
+  def pretty_recurring
+    value = object.recurring
+    value = "never" unless value
+    value
   end
 
   def tag_list

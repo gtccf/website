@@ -1,5 +1,8 @@
 h1 = @event.title
 h2 = @event.pretty_time
+h3
+  ' Recurs
+  = @event.pretty_recurring
 
 p = @event.short_description
 == @event.pretty_description

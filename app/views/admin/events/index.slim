@@ -3,12 +3,14 @@ table
   thead
     th Title
     th Time
+    th Recurrence
     th
   tbody
     - @events.each do |event|
       tr
         td = event.title
-        td = event.time
+        td = event.pretty_time
+        td = event.pretty_recurring
         td
           = link_to "Show", admin_event_path(event)
           = link_to "Edit", edit_admin_event_path(event)
