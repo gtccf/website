@@ -11,6 +11,7 @@ gem 'draper'
 gem 'font-awesome-rails'
 gem 'foreman'
 gem 'high_voltage'
+gem 'ice_cube' #recurring events
 gem 'jquery-rails'
 gem 'markdown-rails'
 gem 'mini_magick'
