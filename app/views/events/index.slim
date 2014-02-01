@@ -1,4 +1,5 @@
 h1 Upcoming Events
+p= link_to "iCalendar File URL", events_path(format: :ics)
 - @events.each do |event|
     event
       .name = link_to event.title, event_path(event)

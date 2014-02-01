@@ -10,3 +10,5 @@ section#events
       event
         .name = link_to event.title, event_path(event)
         .time = event.pretty_time
+  p= link_to "All Events", events_path
+  = link_to image_tag("//www.google.com/calendar/images/ext/gc_button3.gif"), "http://www.google.com/calendar/render?cid=http%3A%2F%2Fgtccf.org%2Fevents.ics"
