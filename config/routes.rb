@@ -1,7 +1,7 @@
 Ccf::Application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   resources :staff, only: [:index]
-  resources :events, only: [:show]
+  resources :events, only: [:show, :index]
   get '/devotions', to: redirect('/devotions/today')
   resources :devotions, only: [] do
     collection do

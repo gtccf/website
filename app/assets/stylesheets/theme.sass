@@ -98,7 +98,7 @@ header
     @include media($mobile)
       @include span-columns(4 of 4)
 
-#events
+section#events
   @include span-columns(3)
   @include reset-display
   @include pad
@@ -134,6 +134,8 @@ footer
   @include media($mobile)
     @include span-columns(2 of 4)
 event
+  @include row
+  margin: 5px
   .name, .name a
     color: black
   .time

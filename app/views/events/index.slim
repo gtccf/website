@@ -1,0 +1,10 @@
+h1 Upcoming Events
+- @events.each do |event|
+    event
+      .name = link_to event.title, event_path(event)
+      .time
+        - if event.recurring
+          = event.pretty_recurring
+          ' next on
+        = event.pretty_time
+      .description = event.short_description

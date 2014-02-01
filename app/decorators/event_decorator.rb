@@ -28,4 +28,24 @@ class EventDecorator < Draper::Decorator
     tag_names = object.tags.pluck(:name)
     tag_names.join ','
   end
+
+  def to_ics
+    event = Icalendar::Event.new
+    event.start = object.time.strftime("%Y%m%dT%H%M%S")
+    if object.end_time
+      event.end = object.end_time.strftime("%Y%m%dT%H%M%S")
+    end
+    event.summary = object.title
+    event.description = object.description
+    event.location = '767 Techwood Dr, Atlanta, GA'
+    event.klass = "PUBLIC"
+    event.created = object.created_at
+    event.last_modified = object.updated_at
+    event.uid = event.url = "http://gtccf.org/events/#{object.id}"
+    if object.recurring
+      event.add_recurrence_rule object.recurring.to_ical
+    end
+    event
+  end
+
 end

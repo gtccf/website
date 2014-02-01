@@ -1,6 +1,6 @@
 section#events
   #always
-    - Event.recurring.next(5).map{|e| e.decorate}.each do |event|
+    - Event.tagged("sidebar").recurring.next(5).map{|e| e.decorate}.each do |event|
       event
         .name == link_to event.title, event_path(event)
         .time == event.pretty_time
