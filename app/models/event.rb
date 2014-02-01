@@ -19,6 +19,14 @@ class Event < ActiveRecord::Base
     write_attribute(:recurring, schedule.to_yaml)
   end
 
+  def recurring_rules= arr
+    schedule = IceCube::Schedule.new(time)
+    arr.each do |r|
+      schedule.add_recurrence_rule r
+    end
+    self.recurring = schedule
+  end
+
   def next_occurrence
     if recurring
       recurring.next_occurrence

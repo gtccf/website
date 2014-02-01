@@ -1,42 +1,15 @@
 iframe.top-video src="//www.youtube.com/embed/oFAffd5xmwA" frameborder="0" allowfullscreen="allowfullscreen"
 
-h2 Upcoming Events
-dl
-  - Event.tagged("Compassion").future.map{|e| e.decorate}.each do |event|
-    dt = event.title
-    dd
-      =' event.pretty_time
-      ' -
-      =' event.short_description
-      = link_to "More", event_path(event)
+h2 Upcoming Compassion Events
+- Event.tagged("Compassion").onetime.future.map{|e| e.decorate}.each do |event|
+  event
+    .name = link_to event.title, event_path(event)
+    .time = event.pretty_time
+    .description = event.short_description
 
-h2 Mondays
-dl
-  dt 3:45-5:45 pm
-  dd Tutoring elementary school kids at City of Refuge
-  dt Time 4:30-6:00pm
-  dd Mentor Kids at the Boys & Girls Club
-
-h2 Tuesdays
-dl
-  dt 3:45-5:45 pm
-  dd Tutoring elementary school kids at City of Refuge
-  dt 6-8 pm
-  dd Cook and serve dinner for the homeless people in Wachovia Park
-
-h2 Wednesday
-dl
-  dt 3-5:30 pm
-  dd Assist Hispanic families in Grant Park with the Atlanta Dream Center. (Spanish speakers encouraged!)
-
-h2 Thursday
-dl
-  dt 11:45 am-1:30 pm
-  dd Eat lunch at Church on the Street with the homeless community
-  dt 4-6:00 pm
-  dd Serve dinner to women and children in need at City of Refuge
-
-h2 Friday
-dl
-  dt 1:30-3 pm
-  dd Write letters of encouragement to inmates at the Atlanta Transitional Facility
+h2 Weekly Events
+- Event.tagged("Compassion").recurring.future.map{|e| e.decorate}.each do |event|
+  event
+    .name = link_to event.title, event_path(event)
+    .time = event.pretty_recurring
+    .description = event.short_description
