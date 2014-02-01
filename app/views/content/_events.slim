@@ -1,13 +1,12 @@
 section#events
   #always
-    h2 Events
-    - Event.tagged("header").where("recurring IS NOT NULL").next(3).map{|e| e.decorate}.each do |event|
+    - Event.recurring.next(5).map{|e| e.decorate}.each do |event|
       event
         .name == link_to event.title, event_path(event)
-        .time == event.pretty_recurring
+        .time == event.pretty_time
   #special
     h2 Special Events
-    - Event.next(3).map{|e| e.decorate}.each do |event|
+    - Event.onetime.next(5).map{|e| e.decorate}.each do |event|
       event
         .name = link_to event.title, event_path(event)
         .time = event.pretty_time

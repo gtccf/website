@@ -2,7 +2,10 @@ class Event < ActiveRecord::Base
   has_and_belongs_to_many :tags
   accepts_nested_attributes_for :tags
 
-  scope :future, -> { where("time >=  ? OR enabled = ?", Time.now, true) }
+  scope :enabled, -> { where(enabled: true) }
+  scope :future, -> { enabled.where("time >=  ? OR recurring IS NOT NULL", Time.now) }
+  scope :onetime, -> { enabled.where("recurring IS NULL") }
+  scope :recurring, -> { enabled.where("recurring IS NOT NULL")}
   scope :next, ->(i) { future.order(:time).limit(i) }
   scope :tagged, ->(name) { joins(:tags).where('tags.name = ?', name) }
 
