@@ -1,11 +1,30 @@
 table.table
+  h1 One Time
+  thead
+    th Title
+    th Time
+    th
+  tbody
+    - @one_time.each do |event|
+      tr
+        td = link_to event.title, admin_event_path(event)
+        td = event.pretty_time
+        td
+          = link_to "Edit", edit_admin_event_path(event), class: 'btn btn-primary'
+          = link_to "Delete", admin_event_path(event), method: :delete, class: 'btn btn-danger'
+        td
+          - unless event.enabled
+            span.label.label-warning Hidden
+  = link_to "New Event", new_admin_event_path, class: "btn btn-primary"
+table.table
+  h1 Recurring
   thead
     th Title
     th Time
     th Recurrence
     th
   tbody
-    - @events.each do |event|
+    - @recurring.each do |event|
       tr
         td = link_to event.title, admin_event_path(event)
         td = event.pretty_time
@@ -16,4 +35,16 @@ table.table
         td
           - unless event.enabled
             span.label.label-warning Hidden
-= link_to "New", new_admin_event_path, class: "btn btn-primary"
+  = link_to "New Recurring", new_admin_event_path(recur: true), class: "btn btn-primary"
+table.table
+  h1 Past Events
+  thead
+      th Title
+      th
+  tbody
+    - @old.each do |event|
+      tr
+        td = link_to event.title, admin_event_path(event)
+        td
+          = link_to "Edit", edit_admin_event_path(event), class: 'btn btn-primary'
+          = link_to "Delete", admin_event_path(event), method: :delete, class: 'btn btn-danger'

@@ -4,8 +4,8 @@ class Event < ActiveRecord::Base
 
   scope :enabled, -> { where(enabled: true) }
   scope :future, -> { enabled.where("time >=  ? OR recurring IS NOT NULL", Time.now) }
-  scope :onetime, -> { enabled.where("recurring IS NULL") }
-  scope :recurring, -> { enabled.where("recurring IS NOT NULL")}
+  scope :onetime, -> { where("recurring IS NULL") }
+  scope :recurring, -> { where("recurring IS NOT NULL")}
   scope :next, ->(i) { future.order(:time).limit(i) }
   scope :tagged, ->(name) { joins(:tags).where('tags.name = ?', name) }
 

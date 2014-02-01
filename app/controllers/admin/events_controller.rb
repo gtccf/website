@@ -1,6 +1,8 @@
 class Admin::EventsController < Admin::AdminController
   def index
-    @events = EventDecorator.decorate_collection(Event.all)
+    @one_time = EventDecorator.decorate_collection(Event.onetime.where("time > ?", Time.now).order(:time))
+    @recurring = EventDecorator.decorate_collection(Event.recurring.order(:time))
+    @old = EventDecorator.decorate_collection(Event.onetime.where("time <= ?", Time.now).order(:time))
   end
 
   def new
