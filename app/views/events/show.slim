@@ -1,5 +1,10 @@
-h1 = @event.title
-h2 = @event.pretty_time
-p = @event.short_description
-br
-== @event.pretty_description
+event
+  h1.title = @event.title
+  h2.time
+    - if @event.recurring
+      =' @event.pretty_recurring
+      ' next on
+    = @event.pretty_time
+  h3.description = @event.short_description
+  br
+  .full-description == @event.pretty_description
