@@ -19,10 +19,14 @@ class EventDecorator < Draper::Decorator
   end
 
   def pretty_end_time
-    if object.end_time
-      object.end_time.to_formatted_s(:long_ordinal)
+    return unless object.end_time
+    next_time = object.next_occurrence
+    delta = object.end_time - object.time
+    next_end_time = next_time + delta
+    if next_end_time.day == next_time.day and next_end_time.year == next_time.year
+      next_end_time.strftime("%H:%M")
     else
-      (object.time + 1.hour).to_formatted_s(:long_ordinal)
+      next_end_time.to_formatted_s(:long_ordinal)
     end
   end
 
