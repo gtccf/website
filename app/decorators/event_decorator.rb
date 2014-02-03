@@ -12,24 +12,17 @@ class EventDecorator < Draper::Decorator
 
   def pretty_time
     if object.next_occurrence
-      object.next_occurrence.to_formatted_s(:long_ordinal)
+      if object.end_time == nil || object.duration < 1.hour
+        object.next_occurrence.to_formatted_s(:long_ordinal)
+      elsif object.duration <  24.hours
+        object.next_occurrence.to_formatted_s(:long_ordinal) + " - " + object.next_occurrence.end_time.strftime("%H:%M")
+      else
+        object.next_occurrence.to_formatted_s(:long_ordinal) + " - " + object.next_occurrence.end_time.to_formatted_s(:long_ordinal)
+      end
     else
       "Past"
     end
   end
-
-  def pretty_end_time
-    return unless object.end_time
-    next_time = object.next_occurrence
-    delta = object.end_time - object.time
-    next_end_time = next_time + delta
-    if next_end_time.day == next_time.day and next_end_time.year == next_time.year
-      next_end_time.strftime("%H:%M")
-    else
-      next_end_time.to_formatted_s(:long_ordinal)
-    end
-  end
-
 
   def pretty_recurring
     value = object.recurring

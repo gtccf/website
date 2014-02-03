@@ -6,6 +6,6 @@ p= link_to "iCalendar File URL", events_path(format: :ics)
       .time
         - if event.recurring
           = event.pretty_recurring
-          ' next on
+          '  next on
         = event.pretty_time
       .description = event.short_description

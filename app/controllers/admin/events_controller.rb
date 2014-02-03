@@ -15,6 +15,7 @@ class Admin::EventsController < Admin::AdminController
 
   def edit
     @event = Event.find(params[:id])
+    @event.end_time = @event.time + 1.hour unless @event.end_time
   end
 
   def update
@@ -27,6 +28,7 @@ class Admin::EventsController < Admin::AdminController
       render 'edit', status: 400
     end
   end
+
   def create
     @event = Event.new(event_params)
     @event.tag_ids = params[:event][:tag_ids]

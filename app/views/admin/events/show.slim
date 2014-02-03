@@ -1,9 +1,6 @@
 h1 = @event.title
 h2
   = @event.pretty_time
-  '  -
-  - if @event.end_time
-    = @event.pretty_end_time
 - unless @event.enabled
   span.label.label-warning Hidden
 h3
