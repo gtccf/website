@@ -5,6 +5,9 @@ event
       =' @event.pretty_recurring
       ' next on
     = @event.pretty_time
+    - if @event.end_time
+      '  to
+      = @event.pretty_end_time
   h3.description = @event.short_description
   br
   .full-description == @event.pretty_description

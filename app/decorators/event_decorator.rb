@@ -18,6 +18,15 @@ class EventDecorator < Draper::Decorator
     end
   end
 
+  def pretty_end_time
+    if object.end_time
+      object.end_time.to_formatted_s(:long_ordinal)
+    else
+      (object.time + 1.hour).to_formatted_s(:long_ordinal)
+    end
+  end
+
+
   def pretty_recurring
     value = object.recurring
     value = "never" unless value

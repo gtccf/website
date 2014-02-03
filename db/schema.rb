@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20140201220748) do
     t.string   "short_description"
     t.text     "recurring"
     t.boolean  "enabled",           default: true
-    t.time     "end_time"
+    t.datetime "end_time"
   end
 
   create_table "events_tags", id: false, force: true do |t|
