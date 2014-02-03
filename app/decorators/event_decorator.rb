@@ -25,7 +25,7 @@ class EventDecorator < Draper::Decorator
   end
 
   def pretty_recurring
-    value = object.recurring
+    value = object.schedule
     value = "never" unless value
     value
   end
@@ -48,8 +48,8 @@ class EventDecorator < Draper::Decorator
     event.created = object.created_at.to_datetime
     event.last_modified = object.updated_at.to_datetime
     event.uid = event.url = "http://gtccf.org/events/#{object.id}"
-    if object.recurring
-      event.recurrence_rules = object.recurring.recurrence_rules.to_ical
+    if object.recurs?
+      event.recurrence_rules = object.schedule.recurrence_rules.to_ical
     end
     event
   end

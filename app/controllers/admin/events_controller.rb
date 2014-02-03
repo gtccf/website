@@ -21,6 +21,7 @@ class Admin::EventsController < Admin::AdminController
   def update
     @event = Event.find(params[:id])
     @event.tag_ids = params[:event][:tag_ids]
+
     if @event.update(event_params)
       flash[:success] = "Updated event"
       redirect_to [:admin, @event]
@@ -54,7 +55,7 @@ class Admin::EventsController < Admin::AdminController
   private
   def event_params
     params.require(:event).permit(
-      :title, :short_description, :description, :time, :end_time, :tag_ids, :enabled
+      :title, :short_description, :description, :time, :end_time, :recurring, :tag_ids, :enabled
     )
   end
 end

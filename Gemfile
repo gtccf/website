@@ -23,6 +23,7 @@ gem 'omniauth-gplus'
 gem 'pg'
 gem 'rails', '>= 4.0.0'
 gem 'rails_12factor'
+gem 'recurring_select', "~> 1.2.1.rc3"
 gem 'redcarpet'
 gem 'sass-rails'
 gem 'slim-rails'

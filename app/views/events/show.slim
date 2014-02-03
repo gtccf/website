@@ -1,7 +1,7 @@
 event
   h1.title = @event.title
   h2.time
-    - if @event.recurring
+    - if @event.recurs?
       =' @event.pretty_recurring
       ' next on
     = @event.pretty_time
