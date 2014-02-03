@@ -8,13 +8,19 @@ $mobile: new-breakpoint(max-width 790px 4)
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
 p
   font-size: golden-ratio(8pt, 1)
-
+a:visited
+  color: black
 h1, h2, h3
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
 
 dt:after
   content: ":"
-
+button
+  @include button($primary)
+  color: white
+  a
+    color: white
+    text-decoration: none
 body
   @include outer-container
   background-size: cover

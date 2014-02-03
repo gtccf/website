@@ -8,3 +8,5 @@ event
   h3.description = @event.short_description
   br
   .full-description == @event.pretty_description
+  - if current_user.try :admin
+    button = link_to "Edit", edit_admin_event_path(@event)
