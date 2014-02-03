@@ -52,7 +52,7 @@ class Admin::EventsController < Admin::AdminController
   private
   def event_params
     params.require(:event).permit(
-      :title, :short_description, :description, :time, :tag_ids, :enabled
+      :title, :short_description, :description, :time, :end_time, :tag_ids, :enabled
     )
   end
 end

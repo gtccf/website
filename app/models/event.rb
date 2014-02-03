@@ -20,7 +20,8 @@ class Event < ActiveRecord::Base
   end
 
   def recurring_rules= arr
-    schedule = IceCube::Schedule.new(time)
+    end_time = time + 1.hours unless end_time
+      schedule = IceCube::Schedule.new(time, end_time: end_time)
     arr.each do |r|
       schedule.add_recurrence_rule r
     end
