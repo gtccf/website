@@ -10,7 +10,7 @@ class Event < ActiveRecord::Base
   scope :tagged, ->(name) { joins(:tags).where('tags.name = ?', name) }
 
   def recurs?
-    recurring != nil
+    recurring != nil && recurring != "null"
   end
 
   def schedule
