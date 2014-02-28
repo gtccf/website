@@ -3,9 +3,9 @@ class Event < ActiveRecord::Base
   accepts_nested_attributes_for :tags
 
   scope :enabled, -> { where(enabled: true) }
-  scope :future, -> { enabled.where("time >=  ? OR recurring IS NOT NULL", Time.now) }
-  scope :onetime, -> { where("recurring IS NULL") }
-  scope :recurring, -> { where("recurring IS NOT NULL")}
+  scope :future, -> { enabled.where("time >=  ? OR (recurring IS NOT NULL AND recurring = 'null')", Time.now) }
+  scope :onetime, -> { where("recurring IS NULL OR recurring = 'null'") }
+  scope :recurring, -> { where("recurring IS NOT NULL AND recurring != 'null'")}
   scope :next, ->(i) { future.order(:time).limit(i) }
   scope :tagged, ->(name) { joins(:tags).where('tags.name = ?', name) }
 
